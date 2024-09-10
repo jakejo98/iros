@@ -1,3 +1,4 @@
+// 아이콘 - svg
 $icons:
 /* 부동산등기 - 열람/발급(출력), 법인등기 - 열람/발급(출력), 동산/채권 담보 등기 - 열람하기 */
 registration_1_active 
@@ -23,8 +24,12 @@ registration_7_disabled
 /* 부동산등기 - 부동산소유현황 */
 registration_8_active
 registration_8_disabled
+responsive_gnb_menu_btn /* 반응형 gnb 활성화 버튼 */
+responsive_gnb_close_btn /* 반응형 gnb 비활성화 버튼 */
+main_banner_search_btn /* 메인배너 검색 버튼 */
 ;
 
+// 공통 속성 값 - svg
 .common_icon {
   display: inline-flex;
   justify-content: center;
@@ -69,20 +74,22 @@ registration_8_disabled
   }
 }
 
-@media screen and (min-width: 768px) {
+// 로고 - Mobile
+@media screen and (max-width: 767px) {
   .icon_logo {
-    width: 99px;
-    height: 30px;
+    width: 86px;
+    height: 26px;
     &::after {
       background-image: url('/iros/img/svg/logo.svg');
     }
   }
 }
 
-@media screen and (max-width: 767px) {
+// 로고 - Tablet, Desktop
+@media screen and (min-width: 768px) {
   .icon_logo {
-    width: 86px;
-    height: 26px;
+    width: 99px;
+    height: 30px;
     &::after {
       background-image: url('/iros/img/svg/logo.svg');
     }

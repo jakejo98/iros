@@ -1,0 +1,46 @@
+// 공통 제목 영역
+.common_wrap {
+  & .common_container {
+    & .common_section {
+      & .section_heading {
+        & .section_title {
+          font-weight: 700;
+          @media screen and (max-width: 767px) {
+            font-size: 18px;
+            line-height: 26px;
+          }
+          @media screen and (min-width: 768px) and (max-width: 1023px) {
+            font-size: 24px;
+            line-height: 36px;
+          }
+          @media screen and (min-width: 1024px) {
+            font-size: 30px;
+            line-height: 45px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 메인페이지 등기별 맞춤메뉴
+.custom_menu_filter {
+  @media screen and (max-width: 767px) {
+    margin: 16px 0px 20px 0px;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    margin: 16px 0px 35px 0px;
+  }
+  @media screen and (min-width: 1024px) {
+    margin: 20px 0px 40px 0px;
+  }
+}
+
+.custom_menu_box {
+  &[aria-hidden="false"] {
+    display: block;
+  }
+  &[aria-hidden="true"] {
+    display: none;
+  }
+}

@@ -17,15 +17,6 @@
 
 /* 가운데 정렬 */
 @mixin container {
-  // Mobile
-  @media screen and (max-width: 767px) {
-    padding: 0px 20px;
-  }
-  // Tablet
-  @media screen and (min-width: 768px) and (max-width: 1023px) {
-    padding: 0px 30px;
-  }
-  // Desktop
   @media screen and (min-width: 1024px) {
     max-width: 1200px;
     margin: 0 auto;
@@ -33,8 +24,8 @@
 }
 
 /* 포지션 */
-@mixin position($top, $right, $bottom, $left, $z-index) {
-  position: absolute;
+@mixin position($attr, $top, $right, $bottom, $left, $z-index) {
+  position: $attr;
   top: $top;
   right: $right;
   bottom: $bottom;
@@ -51,7 +42,7 @@
   z-index: 100;
   width: 100%;
   height: 100%;
-  background-color: map-get($color-background, white-02);
+  background-color: map-get($color-background, black-01);
 }
 
 /* 말줄임 - 단수줄 */

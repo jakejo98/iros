@@ -8,9 +8,15 @@
 @import 'common/common.scss';
 
 /* layout */
+@import 'layout/layout.scss';
 @import 'layout/header.scss';
 
 /* components */
+@import 'components/form.scss';
 @import 'components/icon.scss';
 @import 'components/tab.scss';
+@import 'components/banner.scss';
+
 /* pages */
+@import 'pages/list.scss';
+@import 'pages/main.scss'

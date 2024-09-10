@@ -1,10 +1,13 @@
+// 메인 색상
 $color-main: (
   color-black: #000,
   color-primary: #0078D7,
   color-white: #FFF,
 );
 
+// 텍스트 색상
 $color-type: (
+  black-01: #1E1E1E,
   grey-01: #777E8C,
   grey-02: #666666,
   grey-03: #999999,
@@ -14,6 +17,7 @@ $color-type: (
   red-01: #E41A1A,
 );
 
+// 배경색 색상
 $color-background: (
   black-01: rgba(0, 0, 0, 0.3),
   grey-01: #999999,
@@ -25,8 +29,10 @@ $color-background: (
   white-03: #F7F7F7,
 );
 
+// 보더 색상
 $color-line: (
   sky-01: #DBE9FF,
   grey-01: #DDDDDD,
-  white-01: #F7F7F7,
+  white-01: #F6F6F9,
+  white-02: #F7F7F7,
 );
