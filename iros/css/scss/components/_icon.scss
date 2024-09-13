@@ -1,0 +1,104 @@
+// 아이콘 - svg
+$icons:
+/* 부동산등기 - 열람/발급(출력), 법인등기 - 열람/발급(출력), 동산/채권 담보 등기 - 열람하기 */
+registration_1_active 
+registration_1_disabled
+/* 부동산등기 - 전자발급(전송), 법인등기 - 전자발급(전송) */
+registration_2_active 
+registration_2_disabled
+/* 동산/채권 담보 등기 - 발급하기 */
+registration_3_active
+registration_3_disabled
+/* 부동산등기 - 발급확인, 법인등기 - 발급확인, 동산/채권 담보 등기 - 발급확인 */
+registration_4_active
+registration_4_disabled
+/* 부동산등기 - 통합전자등기, 법인등기 - e-Form 신청, 동산/채권 담보 등기 - e-Form 신청 */
+registration_5_active
+registration_5_disabled
+/* 법인등기 - 전자신청, 동산/채권 담보 등기 - 전자신청 */
+registration_6_active
+registration_6_disabled
+/* 부동산등기 - 전자납부, 법인등기 - 전자납부, 동산/채권 담보 등기 - 전자납부 */
+registration_7_active
+registration_7_disabled
+/* 부동산등기 - 부동산소유현황 */
+registration_8_active
+registration_8_disabled
+responsive_gnb_menu_btn /* 반응형 gnb 활성화 버튼 */
+responsive_gnb_close_btn /* 반응형 gnb 비활성화 버튼 */
+main_banner_search_btn /* 메인배너 검색 버튼 */
+;
+
+// 공통 속성 값 - svg
+.common_icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0;
+  line-height: 0;
+  vertical-align: middle;
+  &::after {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background: center / 100% no-repeat;
+    content: '';
+  }
+  &.ty_16 {
+    width: 16px;
+    height: 16px;
+  }
+  &.ty_20 {
+    width: 20px;
+    height: 20px;
+  }
+  &.ty_24 {
+    width: 24px;
+    height: 24px;
+  }
+  &.ty_26 {
+    width: 26px;
+    height: 26px;
+  }
+  &.ty_30 {
+    width: 30px;
+    height: 30px;
+  }
+  &.ty_32 {
+    width: 32px;
+    height: 32px;
+  }
+  &.ty_48 {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+// 로고 - Mobile
+@media screen and (max-width: 767px) {
+  .icon_logo {
+    width: 86px;
+    height: 26px;
+    &::after {
+      background-image: url('/iros/img/svg/logo.svg');
+    }
+  }
+}
+
+// 로고 - Tablet, Desktop
+@media screen and (min-width: 768px) {
+  .icon_logo {
+    width: 99px;
+    height: 30px;
+    &::after {
+      background-image: url('/iros/img/svg/logo.svg');
+    }
+  }
+}
+
+@each $icon in $icons {
+  .icon_#{$icon}::after {
+    background-image: url('/iros/img/svg/#{$icon}.svg');
+  }
+}
+

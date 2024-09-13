@@ -1,0 +1,38 @@
+// 메인 색상
+$color-main: (
+  color-black: #000,
+  color-primary: #0078D7,
+  color-white: #FFF,
+);
+
+// 텍스트 색상
+$color-type: (
+  black-01: #1E1E1E,
+  grey-01: #777E8C,
+  grey-02: #666666,
+  grey-03: #999999,
+  grey-04: #AAAEB3,
+  grey-05: #ADADAD,
+  grey-06: #CCCFD3,
+  red-01: #E41A1A,
+);
+
+// 배경색 색상
+$color-background: (
+  black-01: rgba(0, 0, 0, 0.3),
+  grey-01: #999999,
+  grey-02: #DDDDDD,
+  grey-03: rgba(221, 221, 221, 0.7),
+  sky-01: rgba(219, 233, 255, 0.7),
+  white-01: #F3F3F3,
+  white-02: #F6F6F9,
+  white-03: #F7F7F7,
+);
+
+// 보더 색상
+$color-line: (
+  sky-01: #DBE9FF,
+  grey-01: #DDDDDD,
+  white-01: #F6F6F9,
+  white-02: #F7F7F7,
+);
