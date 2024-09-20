@@ -1,51 +1,94 @@
 @media screen and (max-width: 767px) {
   .common_section {
-    & .section_grid {
-      & .section_grid_list {
+    & .content_grid {
+      & .content_grid_list {
         // 등기별 맞춤메뉴
         &.custom_menu_list {
           display: flex;
           flex-wrap: wrap;
-          & .section_grid_item {
+          & .content_grid_item {
             width: calc(100% / 2);
             &:nth-of-type(n+3) {
               margin-top: 16px;
             }
-            & .section_grid_link {
+            & .content_grid_link {
               display: flex;
               align-items: center;
-              &:hover {
-                & .section_grid_btn {
-                  border: 1px solid transparent;
-                  background-color: map-get($color-main, color-primary);
+              & .content_grid_unit {
+                display: flex;
+                align-items: center;
+                & .content_grid_btn {
+                  width: 50px;
+                  height: 50px;
+                  margin-right: 20px;
+                  border: 1px solid map-get($color-line, grey-01);
+                  border-radius: 6px;
+                  background-color: map-get($color-main, color-white);
+                  transition: 0.3s all ease;
                 }
-                & .section_grid_text {
-                  color: map-get($color-main, color-primary);
-                }
-              }
-              & .section_grid_btn {
-                width: 50px;
-                height: 50px;
-                margin-right: 20px;
-                border: 1px solid map-get($color-line, grey-01);
-                border-radius: 6px;
-                background-color: map-get($color-main, color-white);
-                transition: 0.3s all ease;
-              }
-              & .section_grid_text {
-                @include font-family('Roboto');
-                font-size: 14px;
-                font-weight: 700;
-                line-height: 20px;
-                color: map-get($color-type, grey-01);
-                transition: 0.3s all ease;
-                & .mobile_text_wrap {
-                  display: block;
+                & .content_grid_text {
+                  @include font-family('Roboto');
+                  font-size: 14px;
+                  font-weight: 700;
+                  line-height: 20px;
+                  color: map-get($color-type, grey-01);
+                  transition: 0.3s all ease;
+                  & .mobile_text_wrap {
+                    display: block;
+                  }
                 }
               }
             }
           }
         }
+        // 등기소 알림
+        &.alarm_list {
+          & .content_grid_item {
+            padding: 4px 0px;
+            &:first-of-type, &:last-of-type {
+              padding: 4px 0px 0px 0px;
+            }
+            &:not(:last-of-type) {
+              border-bottom: 1px solid map-get($color-line, white-02);
+            }
+            & .content_grid_link {
+              & .content_grid_unit {
+                @include font-family('SpoqaHanSansNeo');
+                word-break: normal;
+                & .content_grid_title {
+                  position: relative;
+                  & .title {
+                    @include ellipsis-single(100%);
+                    position: relative;
+                    font-size: 12px;
+                    font-weight: 500;
+                    line-height: 24px;
+                    color: map-get($color-type, grey-03);
+                    &.new_update {
+                      padding-left: 37px;
+                      &::before {
+                        @include position(absolute, 50%, null, null, 0px, null);
+                        display: block;
+                        padding: 3px 4px;
+                        border-radius: 4px;
+                        background-color: map-get($color-background, sky-02);
+                        font-size: 10px;
+                        font-weight: 500;
+                        line-height: 12px;
+                        color: map-get($color-type, blue-01);
+                        content: 'NEW';
+                        transform: translateY(-50%);
+                      }
+                    }
+                  }
+                }
+                & .content_grid_post {
+                  display: none;
+                }
+              }
+            }
+          }
+        }  
       }
     }
   }
@@ -53,93 +96,95 @@
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .common_section {
-    & .section_grid {
-      & .section_grid_list {
+    & .content_grid {
+      & .content_grid_list {
         // 등기별 맞춤메뉴
         &.custom_menu_list {
           display: flex;
           flex-wrap: wrap;
-          & .section_grid_item {
+          & .content_grid_item {
             width: calc(100% / 3);
             &:nth-of-type(n+4) {
               margin-top: 16px;
             }
-            & .section_grid_link {
+            & .content_grid_link {
               display: flex;
               align-items: center;
-              &:hover {
-                & .section_grid_btn {
-                  border: 1px solid transparent;
-                  background-color: map-get($color-main, color-primary);
+              & .content_grid_unit {
+                display: flex;
+                align-items: center;
+                & .content_grid_btn {
+                  width: 50px;
+                  height: 50px;
+                  margin-right: 20px;
+                  border: 1px solid map-get($color-line, grey-01);
+                  border-radius: 6px;
+                  background-color: map-get($color-main, color-white);
+                  transition: 0.3s all ease;
                 }
-                & .section_grid_text {
-                  color: map-get($color-main, color-primary);
+                & .content_grid_text {
+                  @include font-family('Roboto');
+                  font-size: 16px;
+                  font-weight: 700;
+                  line-height: 24px;
+                  color: map-get($color-type, grey-01);
+                  transition: 0.3s all ease;
+                  & .mobile_text_wrap {
+                    display: none;
+                  }
                 }
               }
-              & .section_grid_btn {
-                width: 50px;
-                height: 50px;
-                margin-right: 20px;
-                border: 1px solid map-get($color-line, grey-01);
-                border-radius: 6px;
-                background-color: map-get($color-main, color-white);
-                transition: 0.3s all ease;
-              }
-              & .section_grid_text {
-                @include font-family('Roboto');
-                font-size: 16px;
-                font-weight: 700;
-                line-height: 24px;
-                color: map-get($color-type, grey-01);
-                transition: 0.3s all ease;
-                & .mobile_text_wrap {
+            }
+          }
+        } 
+        // 등기소 알림
+        &.alarm_list {
+          & .content_grid_item {
+            padding: 4px 0px;
+            &:first-of-type, &:last-of-type {
+              padding: 4px 0px 0px 0px;
+            }
+            &:not(:last-of-type) {
+              border-bottom: 1px solid map-get($color-line, white-02);
+            }
+            & .content_grid_link {
+              & .content_grid_unit {
+                @include font-family('SpoqaHanSansNeo');
+                word-break: normal;
+                & .content_grid_title {
+                  position: relative;
+                  & .title {
+                    @include ellipsis-single(100%);
+                    position: relative;
+                    font-size: 14px;
+                    font-weight: 500;
+                    line-height: 24px;
+                    color: map-get($color-type, grey-03);
+                    &.new_update {
+                      padding-left: 37px;
+                      &::before {
+                        @include position(absolute, 50%, null, null, 0px, null);
+                        display: block;
+                        padding: 3px 4px;
+                        border-radius: 4px;
+                        background-color: map-get($color-background, sky-02);
+                        font-size: 10px;
+                        font-weight: 500;
+                        line-height: 12px;
+                        color: map-get($color-type, blue-01);
+                        content: 'NEW';
+                        transform: translateY(-50%);
+                      }
+                    }
+                  }
+                }
+                & .content_grid_post {
                   display: none;
                 }
               }
             }
           }
-        }
-        // 등기소 알림
-        &.alarm_list {
-          & .section_grid_item {
-            & .section_grid_link {
-              & .alarm_box {
-                @include font-family('SpoqaHanSansNeo');
-                padding: 20px;
-                border: 1px solid map-get($color-line, grey-01);
-                border-radius: 10px;
-                word-break: normal;
-                & .alarm_title {
-                  border-bottom: 1px solid map-get($color-line, grey-01);
-                  padding-bottom: 16px;
-                  & .title {
-                    @include ellipsis-multi(100%, 60px, 2);
-                    font-size: 20px;
-                    font-weight: 500;
-                    line-height: 30px;
-                  }
-                }
-                & .alarm_post {
-                  padding-top: 16px;
-                  & .post {
-                    @include ellipsis-multi(100%, 60px, 3);
-                    margin-bottom: 16px;
-                    font-size: 14px;
-                    font-weight: 400;
-                    line-height: 20px;
-                    color: map-get($color-type, grey-02);
-                  }
-                  & .post_time {
-                    font-size: 14px;
-                    font-weight: 100;
-                    line-height: 20px;
-                    color: map-get($color-type, grey-02);
-                  }
-                }
-              }
-            }
-          }
-        }        
+        }   
       }
     }
   }
@@ -147,47 +192,51 @@
 
 @media screen and (min-width: 1024px) {
   .common_section {
-    & .section_grid {
-      & .section_grid_list {
+    & .content_grid {
+      & .content_grid_list {
         // 등기별 맞춤메뉴
         &.custom_menu_list {
           display: flex;
           flex-wrap: wrap;
-          & .section_grid_item {
+          & .content_grid_item {
             width: calc(100% / 3);
             &:nth-of-type(n+4) {
               margin-top: 32px;
             }
-            & .section_grid_link {
-              display: flex;
-              align-items: center;
+            & .content_grid_link {
               &:hover {
-                & .section_grid_btn {
-                  border: 1px solid transparent;
-                  background-color: map-get($color-main, color-primary);
-                }
-                & .section_grid_text {
-                  color: map-get($color-main, color-primary);
+                & .content_grid_unit {
+                  & .content_grid_btn {
+                    border: 1px solid transparent;
+                    background-color: map-get($color-main, color-primary);
+                  }
+                  & .content_grid_text {
+                    color: map-get($color-main, color-primary);
+                  }
                 }
               }
-              & .section_grid_btn {
-                width: 60px;
-                height: 60px;
-                margin-right: 20px;
-                border: 1px solid map-get($color-line, grey-01);
-                border-radius: 6px;
-                background-color: map-get($color-main, color-white);
-                transition: 0.3s all ease;
-              }
-              & .section_grid_text {
-                @include font-family('Roboto');
-                font-size: 20px;
-                font-weight: 700;
-                line-height: 30px;
-                color: map-get($color-type, grey-01);
-                transition: 0.3s all ease;
-                & .mobile_text_wrap {
-                  display: none;
+              & .content_grid_unit {
+                display: flex;
+                align-items: center;
+                & .content_grid_btn {
+                  width: 60px;
+                  height: 60px;
+                  margin-right: 20px;
+                  border: 1px solid map-get($color-line, grey-01);
+                  border-radius: 6px;
+                  background-color: map-get($color-main, color-white);
+                  transition: 0.3s all ease;
+                }
+                & .content_grid_text {
+                  @include font-family('Roboto');
+                  font-size: 20px;
+                  font-weight: 700;
+                  line-height: 30px;
+                  color: map-get($color-type, grey-01);
+                  transition: 0.3s all ease;
+                  & .mobile_text_wrap {
+                    display: none;
+                  }
                 }
               }
             }
@@ -196,19 +245,19 @@
         // 등기소 알림
         &.alarm_list {
           display: flex;
-          & .section_grid_item {
+          & .content_grid_item {
             width: calc((100% - 120px) / 4);
             &:not(:last-of-type) {
               margin-right: 40px;
             }
-            & .section_grid_link {
-              & .alarm_box {
+            & .content_grid_link {
+              & .content_grid_unit {
                 @include font-family('SpoqaHanSansNeo');
                 padding: 20px;
                 border: 1px solid map-get($color-line, grey-01);
                 border-radius: 10px;
                 word-break: normal;
-                & .alarm_title {
+                & .content_grid_title {
                   border-bottom: 1px solid map-get($color-line, grey-01);
                   padding-bottom: 16px;
                   & .title {
@@ -218,7 +267,7 @@
                     line-height: 30px;
                   }
                 }
-                & .alarm_post {
+                & .content_grid_post {
                   padding-top: 16px;
                   & .post {
                     @include ellipsis-multi(100%, 60px, 3);
@@ -234,6 +283,28 @@
                     line-height: 20px;
                     color: map-get($color-type, grey-02);
                   }
+                }
+              }
+            }
+          }
+        }
+        // 이용자별 서비스
+        &.customer_service_list {
+          @include font-family('Roboto');
+          & .content_grid_item {
+            & .content_grid_link {
+              & .content_grid_unit {
+                width: 136px;
+                height: 146px;
+                padding: 25px 16px;
+                border-radius: 8px;
+                background-color: map-get($color-background, white-03);
+                & .content_grid_text {
+                  display: inline-block;
+                  font-size: 20px;
+                  font-weight: 500;
+                  line-height: 30px;
+                  color: map-get($color-type, black-01);
                 }
               }
             }

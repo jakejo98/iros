@@ -7,7 +7,8 @@ $color-main: (
 
 // 텍스트 색상
 $color-type: (
-  black-01: #1E1E1E,
+  black-01 : #111111,
+  black-02: #1E1E1E,
   grey-01: #777E8C,
   grey-02: #666666,
   grey-03: #999999,
@@ -15,6 +16,7 @@ $color-type: (
   grey-05: #ADADAD,
   grey-06: #CCCFD3,
   red-01: #E41A1A,
+  blue-01: #489FE2,
 );
 
 // 배경색 색상
@@ -24,6 +26,7 @@ $color-background: (
   grey-02: #DDDDDD,
   grey-03: rgba(221, 221, 221, 0.7),
   sky-01: rgba(219, 233, 255, 0.7),
+  sky-02: #E9F3FC,
   white-01: #F3F3F3,
   white-02: #F6F6F9,
   white-03: #F7F7F7,
@@ -34,5 +37,6 @@ $color-line: (
   sky-01: #DBE9FF,
   grey-01: #DDDDDD,
   white-01: #F6F6F9,
-  white-02: #F7F7F7,
+  white-02: #F4F4F4,
+  white-03: #F7F7F7,
 );

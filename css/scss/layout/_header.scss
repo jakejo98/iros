@@ -116,7 +116,7 @@
                   }
                   &[aria-expanded="true"] {
                     font-weight: 700;
-                    color: map-get($color-main, color-black);
+                    color: map-get($color-type, black-02);
                     &::after {
                       @include position(absolute, 50%, 0px, null, null, null);
                       display: inline-block;
@@ -147,10 +147,7 @@
                   font-size: 14px;
                   font-weight: 500;
                   line-height: 30px;
-                  color: map-get($color-type, black-01);
-                  &:hover {
-                    color: map-get($color-main, color-primary);
-                  }
+                  color: map-get($color-type, black-02);
                 }
               }
             }

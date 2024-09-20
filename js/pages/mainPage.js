@@ -1,5 +1,8 @@
 export function mainPagecommon(){
   customMenuTabHandler();
+}
+
+export function mainPageDesktop(){
   customMenuHoverHandler();
 }
 
@@ -29,8 +32,8 @@ function customMenuHoverHandler(){
 
   // 부동산등기
   function realEstateHandler(){
-    const realEstateItem = $('.section_custom_menu .real_estate .section_grid_item');
-    const realEstateLink = $('.section_custom_menu .real_estate .section_grid_link');
+    const realEstateItem = $('.section_custom_menu .real_estate .content_grid_item');
+    const realEstateLink = $('.section_custom_menu .real_estate .content_grid_link');
     const realEstateIcon = $('.section_custom_menu .real_estate .common_icon');
 
     // 마우스 오버시
@@ -73,8 +76,8 @@ function customMenuHoverHandler(){
 
   // 법인등기
   function courtHouseHandler(){
-    const courtHouseItem = $('.section_custom_menu .court_house .section_grid_item');
-    const courtHouseLink = $('.section_custom_menu .court_house .section_grid_link');
+    const courtHouseItem = $('.section_custom_menu .court_house .content_grid_item');
+    const courtHouseLink = $('.section_custom_menu .court_house .content_grid_link');
     const courtHouseIcon = $('.section_custom_menu .court_house .common_icon');
 
     // 마우스 오버시
@@ -117,8 +120,8 @@ function customMenuHoverHandler(){
 
   // 동산·채권담보등기
   function pawnHandler(){
-    const pawnItem = $('.section_custom_menu .pawn .section_grid_item');
-    const pawnLink = $('.section_custom_menu .pawn .section_grid_link');
+    const pawnItem = $('.section_custom_menu .pawn .content_grid_item');
+    const pawnLink = $('.section_custom_menu .pawn .content_grid_link');
     const pawnIcon = $('.section_custom_menu .pawn .common_icon');
 
     // 미우스 오버시

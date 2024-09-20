@@ -1,7 +1,7 @@
 import { loadFile } from "/iros/js/common/include.js";
 import { swiper } from "/iros/js/common/swiper.js";
 import { headerDesktop, headerResponsive } from "/iros/js/common/header.js";
-import { mainPagecommon } from "/iros/js/pages/mainPage.js";
+import { mainPagecommon, mainPageDesktop } from "/iros/js/pages/mainPage.js";
 
 let windowWidth = 0;
 
@@ -19,6 +19,7 @@ function checkWidth() {
   windowWidth = updateWidth();
   if(windowWidth > 1023) {
     headerDesktop();
+    mainPageDesktop();
   } else {
     headerResponsive();
   }
