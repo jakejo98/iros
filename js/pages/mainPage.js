@@ -4,7 +4,13 @@ export function mainPagecommon(){
 
 export function mainPageDesktop(){
   customMenuHoverHandler();
+  desktopResizeIcon();
 }
+
+export function mainPageResponsive(){
+  responsiveResizeIcon();
+}
+
 
 // 등기별 맞춤메뉴 버튼 클릭시 컨텐츠 변경
 function customMenuTabHandler(){
@@ -161,4 +167,22 @@ function customMenuHoverHandler(){
       $(pawnItem).eq(5).find(pawnIcon).removeClass('icon_registration_7_active').addClass('icon_registration_7_disabled');
     })
   }
+}
+
+// 데스크탑 이용자별 서비스 아이콘 사이즈 변화
+function desktopResizeIcon(){
+  const resizeIcon = $('.section_customer_service .common_icon');
+  const smallSize = 'ty_32';
+  const bigSize = 'ty_48';
+
+  $(resizeIcon).removeClass(smallSize).addClass(bigSize);
+}
+
+// 반응형 이용자별 서비스 아이콘 사이즈 변화
+function responsiveResizeIcon(){
+  const resizeIcon = $('.section_customer_service .common_icon');
+  const smallSize = 'ty_32';
+  const bigSize = 'ty_48';
+
+  $(resizeIcon).removeClass(bigSize).addClass(smallSize);
 }

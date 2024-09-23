@@ -31,5 +31,6 @@ export function loadFile(callback) {
 
   // 각 요소에 대해 로드 작업을 수행
   loadIfExists('#header', '/iros/html/include/header.html');
+  loadIfExists('#footer', '/iros/html/include/footer.html');
 }
 

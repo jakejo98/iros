@@ -1,6 +1,6 @@
 // 공통 header - Mobile, Tablet
 @media screen and (max-width: 1023px){
-  .common_header {
+  #common_header {
     & .header_inner {
       display: flex;
       justify-content: space-between;
@@ -12,12 +12,12 @@
         padding: 9px 30px;
       }
       & .header_left {
-        & .language_wrap {
+        & .language {
           display: none;
         }
       }
       & .header_right {
-        & .header_util_wrap {
+        & .header_util {
           display: none;
         }
         & .responsive_gnb {
@@ -37,7 +37,7 @@
             align-items: center;
             padding: 16px 10px;
             background-color: map-get($color-main, color-primary);
-            & .responsive_header_util_wrap {
+            & .responsive_header_util {
               & .responsive_header_util_list {
                 display: flex;
                 & .responsive_header_util_item {
@@ -60,7 +60,7 @@
         & .responsive_gnb_content {
           position: relative;
           height: calc(100% - 60px);
-          & .responsive_category_wrap {
+          & .responsive_category {
             height: 100%;
             & .first_depth_list {
               height: 100%;
@@ -163,7 +163,7 @@
 
 // 공통 header - Desktop
 @media screen and (min-width: 1024px) {
-  .common_header {
+  #common_header {
     padding-bottom: 62px;
     & .header_inner {
       @include container;
@@ -177,7 +177,7 @@
       & .header_left {
         display: flex;
         align-items: center;
-        & .language_wrap {
+        & .language {
           margin-left: 15px;
           & .language_list {
             display: flex;
@@ -214,7 +214,7 @@
         }
       }
       & .header_right {
-        & .header_util_wrap {
+        & .header_util {
           & .header_util_list {
             display: flex;
             & .header_util_item {

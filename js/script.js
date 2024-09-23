@@ -1,7 +1,8 @@
 import { loadFile } from "/iros/js/common/include.js";
 import { swiper } from "/iros/js/common/swiper.js";
 import { headerDesktop, headerResponsive } from "/iros/js/common/header.js";
-import { mainPagecommon, mainPageDesktop } from "/iros/js/pages/mainPage.js";
+import { mainPagecommon, mainPageDesktop, mainPageResponsive } from "/iros/js/pages/mainPage.js";
+import { footerCommon } from "/iros/js/common/footer.js";
 
 let windowWidth = 0;
 
@@ -22,6 +23,7 @@ function checkWidth() {
     mainPageDesktop();
   } else {
     headerResponsive();
+    mainPageResponsive();
   }
 }
 // 공통 함수
@@ -30,6 +32,7 @@ $(document).ready(function(){
     checkWidth();
     swiper();
     mainPagecommon();
+    footerCommon();
   });
 });
 

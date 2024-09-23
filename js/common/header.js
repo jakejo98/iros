@@ -1,5 +1,5 @@
 export function headerDesktop(){
-  gnbHandler();
+  desktopGnbHandler();
 }
 
 export function headerResponsive(){
@@ -82,7 +82,7 @@ function responsiveGnbListHandler(){
   })
 }
 
-function gnbHandler(){
+function desktopGnbHandler(){
   const gnbWrap = $('.header_gnb_wrap');
 
   // 데스크탑 gnb 활성화

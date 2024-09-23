@@ -16,6 +16,12 @@ body {
         &.section_main_banner {
           padding: 20px 20px 0px 20px;
         }
+        &.section_customer_service {
+          padding: 40px 0px 40px 20px;
+        }
+        &.section_quick_menu {
+          padding: 40px 20px 65px 20px;
+        }
       }
     }
   }
@@ -30,6 +36,12 @@ body {
         padding: 50px 30px 50px 30px;
         &.section_main_banner {
           padding: 30px 30px 0px 30px;
+        }
+        &.section_customer_service {
+          padding: 50px 0px 50px 30px;
+        }
+        &.section_quick_menu {
+          padding: 50px 30px 75px 30px;
         }
       }
     }
@@ -52,6 +64,12 @@ body {
           @media screen and (max-width: 1259px) {
             padding: 40px 30px 0px 30px;
           }
+        }
+        &.section_quick_menu {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 60px 0px 85px 0px;
         }
       }
     }

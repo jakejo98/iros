@@ -33,7 +33,7 @@
                   line-height: 20px;
                   color: map-get($color-type, grey-01);
                   transition: 0.3s all ease;
-                  & .mobile_text_wrap {
+                  & .content_grid_mobile_text {
                     display: block;
                   }
                 }
@@ -88,7 +88,72 @@
               }
             }
           }
-        }  
+        }
+        // 이용자별 서비스
+        &.customer_service_list {
+          @include font-family('Roboto');
+          overflow-x: auto;
+          display: flex;
+          &::-webkit-scrollbar {
+            display: none;
+          }
+          & .content_grid_item {
+            &:not(:last-of-type) {
+              margin-right: 10px;
+            }
+            & .content_grid_link {
+              & .content_grid_unit {
+                position: relative;
+                width: 136px;
+                height: 146px;
+                padding: 25px 16px;
+                border-radius: 8px;
+                background-color: map-get($color-background, white-03);
+                & .content_grid_text {
+                  display: inline-block;
+                  font-size: 14px;
+                  font-weight: 500;
+                  line-height: 20px;
+                  color: map-get($color-type, black-01);
+                }
+                & .common_icon {
+                  @include position(absolute, null, 16px, 25px, null, null);
+                }
+              }
+            }
+          }
+        }
+        // 바로가기
+        &.quick_menu_list {
+          @include font-family('Roboto');
+          display: flex;
+          & .content_grid_item {
+            width: calc(100% / 4);
+            & .content_grid_link {
+              & .content_grid_unit {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                & .content_grid_btn {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  width: 60px;
+                  height: 60px;
+                  margin-bottom: 5px;
+                  border: 1px solid map-get($color-line, black-01);
+                  border-radius: 50%;
+                }
+                & .content_grid_text {
+                  font-size: 12px;
+                  font-weight: 500;
+                  line-height: 18px;
+                }
+              }
+            }
+          }
+        }    
       }
     }
   }
@@ -129,7 +194,7 @@
                   line-height: 24px;
                   color: map-get($color-type, grey-01);
                   transition: 0.3s all ease;
-                  & .mobile_text_wrap {
+                  & .content_grid_mobile_text {
                     display: none;
                   }
                 }
@@ -184,7 +249,72 @@
               }
             }
           }
-        }   
+        }
+        // 이용자별 서비스   
+        &.customer_service_list {
+          @include font-family('Roboto');
+          overflow-x: auto;
+          display: flex;
+          &::-webkit-scrollbar {
+            display: none;
+          }
+          & .content_grid_item {
+            &:not(:last-of-type) {
+              margin-right: 10px;
+            }
+            & .content_grid_link {
+              & .content_grid_unit {
+                position: relative;
+                width: 136px;
+                height: 146px;
+                padding: 25px 16px;
+                border-radius: 8px;
+                background-color: map-get($color-background, white-03);
+                & .content_grid_text {
+                  display: inline-block;
+                  font-size: 14px;
+                  font-weight: 500;
+                  line-height: 20px;
+                  color: map-get($color-type, black-01);
+                }
+                & .common_icon {
+                  @include position(absolute, null, 16px, 25px, null, null);
+                }
+              }
+            }
+          }
+        }
+        // 바로가기
+        &.quick_menu_list {
+          @include font-family('Roboto');
+          display: flex;
+          & .content_grid_item {
+            width: calc(100% / 4);
+            & .content_grid_link {
+              & .content_grid_unit {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                & .content_grid_btn {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  width: 60px;
+                  height: 60px;
+                  margin-bottom: 10px;
+                  border: 1px solid map-get($color-line, black-01);
+                  border-radius: 50%;
+                }
+                & .content_grid_text {
+                  font-size: 14px;
+                  font-weight: 500;
+                  line-height: 20px;
+                }
+              }
+            }
+          }
+        }  
       }
     }
   }
@@ -234,7 +364,7 @@
                   line-height: 30px;
                   color: map-get($color-type, grey-01);
                   transition: 0.3s all ease;
-                  & .mobile_text_wrap {
+                  & .content_grid_mobile_text {
                     display: none;
                   }
                 }
@@ -291,12 +421,21 @@
         // 이용자별 서비스
         &.customer_service_list {
           @include font-family('Roboto');
+          overflow-x: auto;
+          display: flex;
+          &::-webkit-scrollbar {
+            display: none;
+          }
           & .content_grid_item {
+            &:not(:last-of-type) {
+              margin-right: 15px;
+            }
             & .content_grid_link {
               & .content_grid_unit {
-                width: 136px;
-                height: 146px;
-                padding: 25px 16px;
+                position: relative;
+                width: 204px;
+                height: 220px;
+                padding: 38px 32px;
                 border-radius: 8px;
                 background-color: map-get($color-background, white-03);
                 & .content_grid_text {
@@ -305,6 +444,40 @@
                   font-weight: 500;
                   line-height: 30px;
                   color: map-get($color-type, black-01);
+                }
+                & .common_icon {
+                  @include position(absolute, null, 32px, 38px, null, null);
+                }
+              }
+            }
+          }
+        }
+        // 바로가기
+        &.quick_menu_list {
+          @include font-family('Roboto');
+          display: flex;
+          & .content_grid_item {
+            &:not(:last-of-type) {
+              margin-right: 60px;
+            }
+            & .content_grid_link {
+              & .content_grid_unit {
+                display: flex;
+                align-items: center;
+                & .content_grid_btn {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  width: 60px;
+                  height: 60px;
+                  margin-right: 20px;
+                  border: 1px solid map-get($color-line, black-01);
+                  border-radius: 50%;
+                }
+                & .content_grid_text {
+                  font-size: 16px;
+                  font-weight: 500;
+                  line-height: 24px;
                 }
               }
             }
