@@ -111,6 +111,15 @@ quick_menu_4
   }
 }
 
+// 준비중인 페이지 로고 
+.icon_logo_preparing {
+  width: 335px;
+  height: 310px;
+  &::after {
+    background-image: url('/iros/img/svg/logo_preparing.svg');
+  }
+}
+
 @each $icon in $icons {
   .icon_#{$icon}::after {
     background-image: url('/iros/img/svg/#{$icon}.svg');

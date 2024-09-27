@@ -5,6 +5,7 @@ export function headerDesktop(){
 export function headerResponsive(){
   responsiveGnbHandler();
   responsiveGnbListHandler();
+  responsiveGnbLinkHandler();
 }
 
 // 반응형 gnb 핸들러
@@ -12,12 +13,15 @@ function responsiveGnbHandler(){
   const gnb = $('.responsive_gnb_wrap .responsive_gnb')
   const gnbActiveBtn = $('.responsive_gnb_wrap .responsive_gnb_menu_btn');
   const gnbDisabledBtn = $('.responsive_gnb_wrap .responsive_gnb_close_btn');
+  const fixpage = $('body');
+  const isFixed = 'is-fixed';
 
   // 반응형 gnb 활성화
   $(gnbActiveBtn).click(function(){
     $(this).attr('aria-expanded', 'true');
     $(gnbDisabledBtn).attr('aria-expanded', 'true');
     $(gnb).attr('aria-hidden', 'false');
+    $(fixpage).addClass(isFixed);
   })
 
   // 반응형 gnb 비활성화
@@ -25,6 +29,7 @@ function responsiveGnbHandler(){
     $(this).attr('aria-expanded', 'false');
     $(gnbActiveBtn).attr('aria-expanded', 'false');
     $(gnb).attr('aria-hidden', 'true');
+    $(fixpage).removeClass(isFixed);
   })
 }
 
@@ -82,16 +87,37 @@ function responsiveGnbListHandler(){
   })
 }
 
+// 반응형 Gnb 링크 막기
+function responsiveGnbLinkHandler(){
+  const firstDepth = $('.responsive_gnb .first_depth_list > .depth_item > .depth_link');
+  const secondDepth = $('.responsive_gnb .second_depth_list > .depth_item > .depth_link');
+
+  $(firstDepth).click(function(event){
+    event.preventDefault();
+  })
+
+  $(secondDepth).click(function(event){
+    // 확장된 요소가 있는 경우에만 링크 막기
+    if($(this).attr('aria-expanded') !== undefined) {
+      event.preventDefault();
+    }
+  })
+}
+
+// Desktop Gnb 핸들러
 function desktopGnbHandler(){
   const gnbWrap = $('.header_gnb_wrap');
+  const gnb = $('.header_gnb_wrap .header_gnb');
 
   // 데스크탑 gnb 활성화
   $(gnbWrap).mouseenter(function(){
     $(this).attr('aria-expanded', 'true');
+    $(gnb).attr('aria-hidden', 'false');
   })
 
   // 데스크탑 gnb 비활성화
   $(gnbWrap).mouseleave(function(){
     $(this).attr('aria-expanded', 'false');
+    $(gnb).attr('aria-hidden', 'true');
   })
 }

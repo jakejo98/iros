@@ -1,0 +1,53 @@
+// 준비중인 페이지 - Mobile
+@media screen and (max-width: 767px) {
+  .common_wrap {
+    & .common_section {   
+      &.section_prepare {
+        padding: 0px;
+        & .prepare_message {
+          height: calc(100vh - 40px);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}
+
+// 준비중인 페이지 - Tablet
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .common_wrap {
+    & .common_section {   
+      &.section_prepare {
+        padding: 0px;
+        & .prepare_message {
+          height: calc(100vh - 50px);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}
+
+// 준비중인 페이지 - Desktop
+@media screen and (min-width: 1024px) {
+  .common_wrap {
+    & .common_section {   
+      &.section_prepare {
+        padding: 0px;
+        & .prepare_message {
+          height: calc(100vh - 124px);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}

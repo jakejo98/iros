@@ -1,7 +1,9 @@
 export function footerCommon(){
   menuDropup();
+  menuLinkHandler();
 }
 
+// footer 메뉴 드롭
 function menuDropup(){
   const dropBtn = $('.footer_menu_wrap .footer_menu_link');
   const dropExpandedList = $('.footer_menu_wrap .footer_menu_dropup_list');
@@ -25,3 +27,13 @@ function menuDropup(){
     }
   })
 }
+
+// footer 메뉴 링크 막기
+function menuLinkHandler(){
+  const menuLink = $('.footer_menu .footer_menu_item > .footer_menu_link');
+
+  $(menuLink).click(function(event){
+    event.preventDefault();
+  })
+}
+

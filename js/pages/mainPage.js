@@ -3,12 +3,14 @@ export function mainPagecommon(){
 }
 
 export function mainPageDesktop(){
-  customMenuHoverHandler();
+  desktopCustomMenuHoverHandler();
+  desktopCustomerServicePopup();
   desktopResizeIcon();
 }
 
 export function mainPageResponsive(){
   responsiveResizeIcon();
+  responsiveCustomerServicePopup();
 }
 
 
@@ -31,9 +33,9 @@ function customMenuTabHandler(){
 }
 
 // 등기별 맞춤메뉴 마우스 이벤트
-function customMenuHoverHandler(){
+function desktopCustomMenuHoverHandler(){
   realEstateHandler();
-  courtHouseHandler();
+  corporationHandler();
   pawnHandler();
 
   // 부동산등기
@@ -81,46 +83,46 @@ function customMenuHoverHandler(){
   }
 
   // 법인등기
-  function courtHouseHandler(){
-    const courtHouseItem = $('.section_custom_menu .court_house .content_grid_item');
-    const courtHouseLink = $('.section_custom_menu .court_house .content_grid_link');
-    const courtHouseIcon = $('.section_custom_menu .court_house .common_icon');
+  function corporationHandler(){
+    const corporationItem = $('.section_custom_menu .corporation .content_grid_item');
+    const corporationLink = $('.section_custom_menu .corporation .content_grid_link');
+    const corporationIcon = $('.section_custom_menu .corporation .common_icon');
 
     // 마우스 오버시
-    $(courtHouseLink).mouseenter(function(){
+    $(corporationLink).mouseenter(function(){
       // 인덱스
-      const courtHouseIndex = $(this).parent().index();
+      const corporationIndex = $(this).parent().index();
 
-      switch(courtHouseIndex) {
+      switch(corporationIndex) {
         case 0:
-          $(courtHouseItem).eq(0).find(courtHouseIcon).removeClass('icon_registration_1_disabled').addClass('icon_registration_1_active');
+          $(corporationItem).eq(0).find(corporationIcon).removeClass('icon_registration_1_disabled').addClass('icon_registration_1_active');
           break;
         case 1:
-          $(courtHouseItem).eq(1).find(courtHouseIcon).removeClass('icon_registration_2_disabled').addClass('icon_registration_2_active');
+          $(corporationItem).eq(1).find(corporationIcon).removeClass('icon_registration_2_disabled').addClass('icon_registration_2_active');
           break;
         case 2:
-          $(courtHouseItem).eq(2).find(courtHouseIcon).removeClass('icon_registration_4_disabled').addClass('icon_registration_4_active');
+          $(corporationItem).eq(2).find(corporationIcon).removeClass('icon_registration_4_disabled').addClass('icon_registration_4_active');
           break;
         case 3:
-          $(courtHouseItem).eq(3).find(courtHouseIcon).removeClass('icon_registration_6_disabled').addClass('icon_registration_6_active');
+          $(corporationItem).eq(3).find(corporationIcon).removeClass('icon_registration_6_disabled').addClass('icon_registration_6_active');
           break;
         case 4:
-          $(courtHouseItem).eq(4).find(courtHouseIcon).removeClass('icon_registration_5_disabled').addClass('icon_registration_5_active');
+          $(corporationItem).eq(4).find(corporationIcon).removeClass('icon_registration_5_disabled').addClass('icon_registration_5_active');
           break;
         case 5:
-          $(courtHouseItem).eq(5).find(courtHouseIcon).removeClass('icon_registration_7_disabled').addClass('icon_registration_7_active');
+          $(corporationItem).eq(5).find(corporationIcon).removeClass('icon_registration_7_disabled').addClass('icon_registration_7_active');
           break;
       }
     })
 
     // 마우스 오버아웃시
-    $(courtHouseLink).mouseleave(function(){
-      $(courtHouseItem).eq(0).find(courtHouseIcon).removeClass('icon_registration_1_active').addClass('icon_registration_1_disabled');
-      $(courtHouseItem).eq(1).find(courtHouseIcon).removeClass('icon_registration_2_active').addClass('icon_registration_2_disabled');
-      $(courtHouseItem).eq(2).find(courtHouseIcon).removeClass('icon_registration_4_active').addClass('icon_registration_4_disabled');
-      $(courtHouseItem).eq(3).find(courtHouseIcon).removeClass('icon_registration_6_active').addClass('icon_registration_6_disabled');
-      $(courtHouseItem).eq(4).find(courtHouseIcon).removeClass('icon_registration_5_active').addClass('icon_registration_5_disabled');
-      $(courtHouseItem).eq(5).find(courtHouseIcon).removeClass('icon_registration_7_active').addClass('icon_registration_7_disabled');
+    $(corporationLink).mouseleave(function(){
+      $(corporationItem).eq(0).find(corporationIcon).removeClass('icon_registration_1_active').addClass('icon_registration_1_disabled');
+      $(corporationItem).eq(1).find(corporationIcon).removeClass('icon_registration_2_active').addClass('icon_registration_2_disabled');
+      $(corporationItem).eq(2).find(corporationIcon).removeClass('icon_registration_4_active').addClass('icon_registration_4_disabled');
+      $(corporationItem).eq(3).find(corporationIcon).removeClass('icon_registration_6_active').addClass('icon_registration_6_disabled');
+      $(corporationItem).eq(4).find(corporationIcon).removeClass('icon_registration_5_active').addClass('icon_registration_5_disabled');
+      $(corporationItem).eq(5).find(corporationIcon).removeClass('icon_registration_7_active').addClass('icon_registration_7_disabled');
     })
   }
 
@@ -185,4 +187,114 @@ function responsiveResizeIcon(){
   const bigSize = 'ty_48';
 
   $(resizeIcon).removeClass(bigSize).addClass(smallSize);
+}
+
+// 데스크탑 등록면허세 정액분 신고, 직권말소통지등 보기, 신용카드 매출전표 발행 클릭시 링크 이동 하지 않고 팝업 창 활성화
+function desktopCustomerServicePopup(){
+  licenseTax();
+  exOfficio();
+  creditCard();
+  function licenseTax(){
+    const item = $('.section_customer_service .content_grid_item').eq(5);
+    const link = $('.section_customer_service .content_grid_link');
+
+    $(item).find(link).click(function(event){
+      event.preventDefault();
+
+      let width = 500;
+      let height = 500;
+      let left = (window.outerWidth / 2) - (width / 2) + window.screenX; 
+      let top = (window.outerHeight / 2) - (height / 2) + window.screenY; 
+      
+      window.open('/iros/html/prepare/etc/registration_license_tax.html', '등록면허세 정액분 신고 팝업 창', 'width=' + width + ',height=' + height + ',top=' + top + ',left=' + left);
+    })
+  }
+  function exOfficio(){
+    const item = $('.section_customer_service .content_grid_item').eq(7);
+    const link = $('.section_customer_service .content_grid_link');
+
+    $(item).find(link).click(function(event){
+      event.preventDefault();
+
+      let width = 500;
+      let height = 500;
+      let left = (window.outerWidth / 2) - (width / 2) + window.screenX; 
+      let top = (window.outerHeight / 2) - (height / 2) + window.screenY; 
+      
+      window.open('/iros/html/prepare/etc/ex_officio_notice_etc.html', '직권말소통지등 보기 팝업 창', 'width=' + width + ',height=' + height + ',top=' + top + ',left=' + left);
+    })
+  }
+  function creditCard(){
+    const item = $('.section_customer_service .content_grid_item').eq(8);
+    const link = $('.section_customer_service .content_grid_link');
+
+    $(item).find(link).click(function(event){
+      event.preventDefault();
+
+      let width = 500;
+      let height = 500;
+      let left = (window.outerWidth / 2) - (width / 2) + window.screenX; 
+      let top = (window.outerHeight / 2) - (height / 2) + window.screenY; 
+      
+      window.open('/iros/html/prepare/etc/ex_officio_notice_etc.html', '신용카드 매출전표 발행 팝업 창', 'width=' + width + ',height=' + height + ',top=' + top + ',left=' + left);
+    })
+  }
+}
+
+// 반응형 등록면허세 정액분 신고, 직권말소통지등 보기, 신용카드 매출전표 발행 클릭시 링크 이동 하지 않고 팝업 창 활성화
+function responsiveCustomerServicePopup(){
+  licenseTax();
+  exOfficio();
+  creditCard();
+  function licenseTax(){
+    const item = $('.section_customer_service .content_grid_item').eq(5);
+    const link = $('.section_customer_service .content_grid_link');
+
+    $(item).find(link).click(function(event){
+      event.preventDefault();
+
+      let percentWidth = 50; 
+      let percentHeight = 50; 
+      let width = Math.floor(window.screen.width * (percentWidth / 100));
+      let height = Math.floor(window.screen.height * (percentHeight / 100));
+      let left = (window.screen.width / 2) - (width / 2);
+      let top = (window.screen.height / 2) - (height / 2);
+      
+      window.open('/iros/html/prepare/etc/registration_license_tax.html', '등록면허세 정액분 신고 팝업 창', 'width=' + width + ',height=' + height + ',top=' + top + ',left=' + left);
+    })
+  }
+  function exOfficio(){
+    const item = $('.section_customer_service .content_grid_item').eq(7);
+    const link = $('.section_customer_service .content_grid_link');
+
+    $(item).find(link).click(function(event){
+      event.preventDefault();
+
+      let percentWidth = 50; 
+      let percentHeight = 50; 
+      let width = Math.floor(window.screen.width * (percentWidth / 100));
+      let height = Math.floor(window.screen.height * (percentHeight / 100));
+      let left = (window.screen.width / 2) - (width / 2);
+      let top = (window.screen.height / 2) - (height / 2);
+      
+      window.open('/iros/html/prepare/etc/ex_officio_notice_etc.html', '직권말소통지등 보기 팝업 창', 'width=' + width + ',height=' + height + ',top=' + top + ',left=' + left);
+    })
+  }
+  function creditCard(){
+    const item = $('.section_customer_service .content_grid_item').eq(8);
+    const link = $('.section_customer_service .content_grid_link');
+
+    $(item).find(link).click(function(event){
+      event.preventDefault();
+
+      let percentWidth = 50; 
+      let percentHeight = 50; 
+      let width = Math.floor(window.screen.width * (percentWidth / 100));
+      let height = Math.floor(window.screen.height * (percentHeight / 100));
+      let left = (window.screen.width / 2) - (width / 2);
+      let top = (window.screen.height / 2) - (height / 2);
+      
+      window.open('/iros/html/prepare/etc/ex_officio_notice_etc.html', '신용카드 매출전표 발행 팝업 창', 'width=' + width + ',height=' + height + ',top=' + top + ',left=' + left);
+    })
+  }
 }
