@@ -1,11 +1,11 @@
-// 준비중인 페이지 - Mobile
+// 준비중인 페이지(기본버전) - Mobile
 @media screen and (max-width: 767px) {
   .common_wrap {
     & .common_section {   
       &.section_prepare {
-        padding: 0px;
+        padding: 20px 0px 50px 0px;
         & .prepare_message {
-          height: calc(100vh - 40px);
+          height: calc(100vh - 110px);
           display: flex;
           justify-content: center;
           align-items: center;
@@ -16,14 +16,14 @@
   }
 }
 
-// 준비중인 페이지 - Tablet
+// 준비중인 페이지(기본버전) - Tablet
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .common_wrap {
     & .common_section {   
       &.section_prepare {
-        padding: 0px;
+        padding: 30px 0px 60px 0px;
         & .prepare_message {
-          height: calc(100vh - 50px);
+          height: calc(100vh - 140px);
           display: flex;
           justify-content: center;
           align-items: center;
@@ -34,7 +34,7 @@
   }
 }
 
-// 준비중인 페이지 - Desktop
+// 준비중인 페이지(기본버전) - Desktop
 @media screen and (min-width: 1024px) {
   .common_wrap {
     & .common_section {   
@@ -46,6 +46,71 @@
           justify-content: center;
           align-items: center;
           flex-direction: column;
+        }
+      }
+    }
+  }
+}
+
+// 준비중인 페이지(remote 버전) - Mobile
+@media screen and (max-width: 767px) {
+  .common_wrap {
+    & .common_section {
+      &.section_prepare_remote_content {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 0px 50px 0px;
+        & .common_remote {
+          display: none;
+        }
+        & .prepare_content {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: calc(100vh - 110px);
+        }
+      }
+    }
+  }
+}
+
+// 준비중인 페이지(remote 버전) - Tablet
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .common_wrap {
+    & .common_section {
+      &.section_prepare_remote_content {
+        display: flex;
+        justify-content: space-between;
+        padding: 30px 0px 60px 0px;
+        & .common_remote {
+          display: none;
+        }
+        & .prepare_content {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: calc(100vh - 140px);
+        }
+      }
+    }
+  }
+}
+
+// 준비중인 페이지(remote 버전) - Desktop
+@media screen and (min-width: 1024px) {
+  .common_wrap {
+    & .common_section {
+      &.section_prepare_remote_content {
+        display: flex;
+        justify-content: space-between;
+        padding: 60px 0px 85px 0px;
+        & .prepare_content {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: calc(100% - 300px);
         }
       }
     }

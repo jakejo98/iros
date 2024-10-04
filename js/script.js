@@ -3,6 +3,7 @@ import { swiper } from "/iros/js/common/swiper.js";
 import { headerDesktop, headerResponsive } from "/iros/js/common/header.js";
 import { mainPagecommon, mainPageDesktop, mainPageResponsive } from "/iros/js/pages/mainPage.js";
 import { footerCommon } from "/iros/js/common/footer.js";
+import { remoteDesktop } from "/iros/js/pages/remote.js";
 
 let windowWidth = 0;
 
@@ -21,6 +22,7 @@ function checkWidth() {
   if(windowWidth > 1023) {
     headerDesktop();
     mainPageDesktop();
+    remoteDesktop();
   } else {
     headerResponsive();
     mainPageResponsive();

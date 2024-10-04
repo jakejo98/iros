@@ -1,0 +1,77 @@
+.common_remote {
+  & .common_remote_lnb {
+    width: 250px;
+    & .common_remote_lnb_title {
+      margin-bottom: 20px;
+      border-bottom: 2px solid map-get($color-main, color-black);
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 103px;
+      text-align: center;
+    }
+    & .common_remote_lnb_list {
+      // 1depth
+      &.first_list {
+        & > .common_remote_lnb_item {
+          &:not(:last-of-type) {
+            margin-bottom: 4px;
+          }
+          &:first-of-type {
+            & > .common_remote_lnb_link {
+              border-radius: 0px 10px 0px 0px;
+            }
+          }
+          & > .common_remote_lnb_link {
+            padding: 14px 15px;
+            border: 1px solid map-get($color-line, grey-01);
+            background-color: map-get($color-main, color-white);
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 20px;
+            color: map-get($color-type, grey-02);
+            &.active{
+              background-color: map-get($color-main, color-primary);
+              color: map-get($color-main, color-white);
+              border: 1px solid map-get($color-main, color-primary);
+            }
+          }
+        }
+      }
+      // 2depth 
+      &.second_list {
+        padding: 10px 20px;
+        border: 1px solid map-get($color-main, color-primary);
+        border-top: none;
+        &[aria-hidden="false"] {
+          display: block;
+        }
+        &[aria-hidden="true"] {
+          display: none;
+        }
+        & > .common_remote_lnb_item {
+          & .common_remote_lnb_link {
+            position: relative;
+            padding-left: 15px;
+            font-size: 14px;
+            line-height: 40px;
+            &::before {
+              @include position(absolute, 50%, null, null, 0px, null);
+              width: 5px;
+              height: 2px;
+              background-color: map-get($color-background, grey-01);
+              transform: translateY(-50%);
+              content: '';
+            }
+            color: map-get($color-type, grey-03);
+            &.active {
+              color: map-get($color-main, color-primary);
+              &::before {
+                background-color: map-get($color-main, color-primary);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
